@@ -23,12 +23,14 @@ app.post('/register',async(req,res)=>{
 
 app.get('/api/users', async (req, res) => {
     try {
-      const users = await User.find();
-      res.json(users);
+        const users = await User.find();
+        res.json(users);
     } catch (error) {
-      res.status(500).send('Error fetching users');
+        console.error('Error fetching users:', error); // Logs full error to console
+        res.status(500).send('Error fetching users');
     }
-  });
+});
+
 
   app.put('/api/users/:id', async (req, res) => {
     try {
