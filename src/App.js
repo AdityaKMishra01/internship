@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Register from './pages/register';
+import AdminPanel from './pages/Adminpanel';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div style={styles.navContainer}>
+        <Link to="/register" style={styles.link}>Register User</Link>
+        <Link to="/admin" style={styles.link}>Admin Panel</Link>
+      </div>
+
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </Router>
   );
-}
+};
+
+const styles = {
+  navContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '20px',
+  },
+  link: {
+    margin: '0 15px',
+    textDecoration: 'none',
+    padding: '10px 20px',
+    backgroundColor: '#007bff',
+    color: 'white',
+    borderRadius: '5px',
+  },
+};
 
 export default App;
