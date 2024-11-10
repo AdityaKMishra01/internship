@@ -16,7 +16,6 @@ app.post('/register',async(req,res)=>{
         const user = new User({name,email,mobile,designation,gender,course,image});
         await user.save() 
         res.status(210).json({msg:"User registered success"})
-        alert("Registered Successfully")
     } catch(err){
         console.log(err)
     }
