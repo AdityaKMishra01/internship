@@ -9,9 +9,9 @@ const port = 8000;
 connectDB();
 
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://internship-ten-red.vercel.app'], // Allow only React app
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow methods you need
-  allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
+  origin: ['http://localhost:3000', 'https://internship-ten-red.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 app.use(express.json());
 app.post('/register',async(req,res)=>{
