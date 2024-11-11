@@ -8,9 +8,7 @@ const port = 8000;
 
 connectDB();
 
-app.use(cors({
-    origin: ['https://internship-ten-red.vercel.app', 'http://localhost:8000']
-}));
+app.use(cors());
 app.use(express.json());
 app.post('/register',async(req,res)=>{
     try{
