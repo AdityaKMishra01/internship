@@ -36,12 +36,15 @@ const AdminPanel = () => {
 
   // Fetch all users
   const fetchUsers = async () => {
-    try {
-      const response = await axios.get("http://localhost:8000/api/users");
-      setUsers(response.data);
-    } catch (error) {
-      console.error("Error fetching users", error);
-    }
+   // Example in Adminpanel.jsx:
+axios.get('https://localhost:8000/api/users')
+    .then(response => {
+        setUsers(response.data);
+    })
+    .catch(error => {
+        console.error("Error fetching users", error);
+    });
+
   };
 
   // Delete user

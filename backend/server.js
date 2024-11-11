@@ -8,7 +8,9 @@ const port = 8000;
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+    origin: ['https://internship-ten-red.vercel.app', 'http://localhost:3000']
+}));
 app.use(express.json());
 app.post('/register',async(req,res)=>{
     try{
@@ -16,7 +18,6 @@ app.post('/register',async(req,res)=>{
         const user = new User({name,email,mobile,designation,gender,course,image});
         await user.save() 
         res.status(210).json({msg:"User registered success"})
-        alert("Registered Successfully")
     } catch(err){
         console.log(err)
     }
@@ -24,12 +25,14 @@ app.post('/register',async(req,res)=>{
 
 app.get('/api/users', async (req, res) => {
     try {
-      const users = await User.find();
-      res.json(users);
+        const users = await User.find();
+        res.json(users);
     } catch (error) {
-      res.status(500).send('Error fetching users');
+        console.error('Error fetching users:', error); // Logs full error to console
+        res.status(500).send('Error fetching users');
     }
-  });
+});
+
 
   app.put('/api/users/:id', async (req, res) => {
     try {
