@@ -8,7 +8,11 @@ const port = 8000;
 
 connectDB();
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Allow only React app
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow methods you need
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allow necessary headers
+}));
 app.use(express.json());
 app.post('/register',async(req,res)=>{
     try{
