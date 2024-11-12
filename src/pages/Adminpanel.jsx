@@ -37,12 +37,14 @@ const AdminPanel = () => {
   // Fetch all users
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/users");
-      setUsers(response.data);
+      const response = await axios.get("https://internship-ten-red.vercel.app/api/users");
+      console.log(response.data); // Verify the structure of the response
+      setUsers(Array.isArray(response.data) ? response.data : []); // Ensure it's an array
     } catch (error) {
       console.error("Error fetching users", error);
     }
   };
+  
 
   // Delete user
   const handleDelete = async (id) => {
