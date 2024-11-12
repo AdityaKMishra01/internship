@@ -9,14 +9,11 @@ const port = 8000;
 connectDB();
 
 app.use(cors({
-  origin: [
-    'http://localhost:3000',  // React app running locally
-    'https://internship-ten-red.vercel.app',  // React app deployed on Vercel
-    'http://192.168.29.170:3000'  // Your computer's IP address (adjust for your local network)
-  ],
+  origin: '*',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
+
 
 app.use(express.json());
 app.post('/register',async(req,res)=>{
