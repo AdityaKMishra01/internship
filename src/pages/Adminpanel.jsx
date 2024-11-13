@@ -150,7 +150,7 @@ const AdminPanel = () => {
         </div>
       )}
 
-      <div className="loginadmin" style={{ display: isLoggedIn ? "none" : "" }}>
+      {/* <div className="loginadmin" style={{ display: isLoggedIn ? "none" : "" }}>
       {isLoggedIn ? (
         <h2>Welcome, Admin!</h2>
       ) : (
@@ -178,8 +178,8 @@ const AdminPanel = () => {
           <button type="submit" >Login</button>
         </form>
       )}
-      </div>
-    </div>
+      </div> */}
+    </div> 
   );
 };
 
