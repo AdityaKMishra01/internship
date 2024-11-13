@@ -9,11 +9,10 @@ const port = 3000;
 connectDB();
 
 app.use(cors({
-  origin: 'https://internship-ten-red.vercel.app',
-  credentials: true, // Allow cookies and authorization headers
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: '*',
+  origin: '*', // Temporarily set to allow all origins
+  credentials: true,
 }));
+
 
 
 
