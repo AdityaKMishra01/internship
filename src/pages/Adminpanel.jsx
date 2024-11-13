@@ -17,18 +17,18 @@ const AdminPanel = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Handle login submission
-  const handleLogin = (e) => {
-    e.preventDefault();
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
 
-    // Hardcoded credentials
-    if (id === 'Admin' && password === 'admin123') {
-      setIsLoggedIn(true);
-      setError('');
-    } else {
-      setError('Invalid ID or Password');
-      setIsLoggedIn(false);
-    }
-  };
+  //   // Hardcoded credentials
+  //   if (id === 'Admin' && password === 'admin123') {
+  //     setIsLoggedIn(true);
+  //     setError('');
+  //   } else {
+  //     setError('Invalid ID or Password');
+  //     setIsLoggedIn(false);
+  //   }
+  // };
 
   useEffect(() => {
     fetchUsers();
