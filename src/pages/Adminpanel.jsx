@@ -49,7 +49,7 @@ const AdminPanel = () => {
   // Delete user
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/users/${id}`);
+      await axios.delete(`https://internship-ten-red.vercel.app/api/users/${id}`);
       fetchUsers(); // Refresh the user list
     } catch (error) {
       console.error("Error deleting user", error);
@@ -59,7 +59,7 @@ const AdminPanel = () => {
   // Handle updating user
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`http://localhost:8000/api/users/${id}`, {
+      await axios.put(`https://internship-ten-red.vercel.app/api/users/${id}`, {
         name,
         email,
         mobile,
