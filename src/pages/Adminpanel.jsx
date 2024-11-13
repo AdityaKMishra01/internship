@@ -37,13 +37,14 @@ const AdminPanel = () => {
   // Fetch all users
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("https://internship-ten-red.vercel.app/api/users");
-      console.log(response.data); // Verify the structure of the response
-      setUsers(Array.isArray(response.data) ? response.data : []); // Ensure it's an array
+        const response = await axios.get("/api/users");
+        console.log(response.data); // Verify the response structure
+        setUsers(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
-      console.error("Error fetching users", error);
+        console.error("Error fetching users:", error);
     }
-  };
+};
+
   
 
   // Delete user
@@ -155,7 +156,7 @@ const AdminPanel = () => {
         <h2>Welcome, Admin!</h2>
       ) : (
         <form onSubmit={handleLogin} >
-          <h2>Login</h2>
+          <h2>Login</h2>01
           {error && <p >{error}</p>}
           <label >
             ID:
