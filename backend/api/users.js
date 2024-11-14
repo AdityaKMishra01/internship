@@ -8,10 +8,10 @@ const port = 8000;
 
 connectDB();
 
+app.use(cors());
 app.use(cors({
-  origin: ['https://internship-ten-red.vercel.app','http://localhost:8000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+  origin: 'https://internship-ten-red.vercel.app'
+}))
 
 
 
