@@ -15,7 +15,7 @@ const AdminPanel = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const url = 'http://localhost:9000';
+  const url = 'https://internship-ten-red.vercel.app';
 
   // Handle login submission
   // const handleLogin = (e) => {
