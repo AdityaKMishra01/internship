@@ -30,7 +30,7 @@ app.post('/register',async(req,res)=>{
 
 app.get('/api/users', async (req, res) => {
   try {
-      const users = await User.find(); // Check if data is being fetched
+      const users = await User.find();
       res.json(users);
   } catch (error) {
       console.error('Error fetching users:', error);
@@ -58,6 +58,4 @@ app.get('/api/users', async (req, res) => {
     }
   });
 
-app.listen(port,
-    console.log(`server is listening on port ${port}`)
-)
+
