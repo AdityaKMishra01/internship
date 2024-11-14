@@ -1,6 +1,6 @@
 const express = require('express');
-const connectDB = require('./db/dbConn');
-const User = require('./db/user');
+const connectDB = require('../db/dbConn');
+const User = require('../db/user');
 const app = express();
 const cors = require('cors');
 
@@ -59,3 +59,4 @@ app.get('/api/users', async (req, res) => {
   });
 
 
+  module.exports = app;
