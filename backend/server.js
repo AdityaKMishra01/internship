@@ -4,7 +4,7 @@ const User = require('./db/user');
 const app = express();
 const cors = require('cors');
 
-const port = 3000;
+const port = 8000;
 
 connectDB();
 
@@ -32,8 +32,7 @@ app.post('/register',async(req,res)=>{
 
 app.get('/api/users', async (req, res) => {
   try {
-      const users = await User.find();
-      console.log('Users fetched:', users); // Check if data is being fetched
+      const users = await User.find(); // Check if data is being fetched
       res.json(users);
   } catch (error) {
       console.error('Error fetching users:', error);
