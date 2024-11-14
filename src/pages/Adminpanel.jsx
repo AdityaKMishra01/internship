@@ -15,6 +15,7 @@ const AdminPanel = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const url = 'https://internship-ten-red.vercel.app';
 
   // Handle login submission
   // const handleLogin = (e) => {
@@ -37,7 +38,7 @@ const AdminPanel = () => {
   // Fetch all users
   const fetchUsers = async () => {
     try {
-        const response = await axios.get("https://internship-ten-red.vercel.app/api/users");
+        const response = await axios.get(`${url}/api/users`);
         console.log(response.data); // Verify the response structure
         setUsers(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
