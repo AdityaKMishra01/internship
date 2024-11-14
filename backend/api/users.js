@@ -11,7 +11,7 @@ connectDB();
 
 app.use(cors());
 app.use(cors({
-  origin: 'https://internship-ten-red.vercel.app'
+  origin: ['https://internship-ten-red.vercel.app','http://localhost:9000']
 }))
 
 
